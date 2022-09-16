@@ -1,0 +1,19 @@
+{
+  "name": "SPSSE-discord-bot",
+  "version": "0.1.0",
+  "description": "SPŠSE Discord bot pro školní server",
+  "main": "index.js",
+  "repository": "https://github.com/Mapetr/SPSSE-discord-bot.git",
+  "author": "Petr Mácha <info@mapetr.moe>",
+  "license": "GPLv3.0",
+  "private": false,
+  "dependencies": {
+    "@discordjs/voice": "^0.11.0",
+    "bufferutil": "^4.0.6",
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.2",
+    "erlpack": "discord/erlpack",
+    "utf-8-validate": "^5.0.9",
+    "zlib-sync": "^0.1.7"
+  }
+}
