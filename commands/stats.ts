@@ -13,7 +13,7 @@ export const Stats: Command = {
       .addFields(
         { name: "Lokální čas", value: new Date().toLocaleString('cs-CZ') },
         { name: "Discord API Latence", value: `${apiLatency}ms` },
-        { name: "Verze", value: `${json.version}v` },
+        { name: "Verze", value: `v${json.version}` },
         { name: "Repozitář", value: "https://github.com/Mapetr/SPSSE-discord-bot"})
       .setTimestamp();
     await interaction.reply({embeds: [embed]});
