@@ -1,7 +1,7 @@
 import {EmbedBuilder, Role, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'roleCreate',
   once: false,
   async execute(role: Role) {

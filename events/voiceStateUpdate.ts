@@ -1,6 +1,6 @@
 import {VoiceState} from "discord.js";
 
-module.exports = {
+export default{
   name: 'voiceStateUpdate',
   once: false,
   async execute(oldState: VoiceState, newState: VoiceState) {

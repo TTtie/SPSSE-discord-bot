@@ -1,7 +1,7 @@
 import {EmbedBuilder, GuildEmoji, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'emojiCreate',
   once: false,
   async execute(emoji: GuildEmoji) {

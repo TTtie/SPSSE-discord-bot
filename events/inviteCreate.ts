@@ -1,7 +1,7 @@
 import {EmbedBuilder, Invite, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'inviteCreate',
   once: false,
   async execute(invite: Invite) {

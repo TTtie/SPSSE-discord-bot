@@ -1,7 +1,7 @@
 import {EmbedBuilder, GuildBan, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'guildBanAdd',
   once: false,
   async execute(ban: GuildBan) {

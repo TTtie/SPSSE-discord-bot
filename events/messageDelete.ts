@@ -1,7 +1,7 @@
 import {EmbedBuilder, Message, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'messageDelete',
   once: false,
   async execute(message: Message) {

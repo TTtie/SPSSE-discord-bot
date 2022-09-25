@@ -1,7 +1,7 @@
 import {EmbedBuilder, NewsChannel, TextChannel, VoiceChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'webhookUpdate',
   once: false,
   async execute(channel: TextChannel | NewsChannel | VoiceChannel) {

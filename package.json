@@ -5,8 +5,9 @@
   "main": "index.js",
   "repository": "https://github.com/Mapetr/SPSSE-discord-bot.git",
   "author": "Petr Mácha <info@mapetr.moe>",
-  "license": "GPLv3.0",
+  "license": "GPL-3.0-only",
   "private": false,
+  "type": "module",
   "dependencies": {
     "@discordjs/voice": "^0.11.0",
     "@sentry/node": "^7.13.0",

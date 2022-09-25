@@ -1,7 +1,7 @@
 import {ChatInputCommandInteraction, Client, CommandInteraction} from "discord.js";
-import {Commands} from "../Commands";
+import {Commands} from "../Commands.js";
 
-module.exports = {
+export default {
   name: 'interactionCreate',
   once: false,
   async execute(interaction: ChatInputCommandInteraction) {

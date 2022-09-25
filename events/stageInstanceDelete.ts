@@ -1,7 +1,7 @@
 import {EmbedBuilder, StageInstance, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'stageInstanceDelete',
   once: false,
   async execute(stage: StageInstance) {

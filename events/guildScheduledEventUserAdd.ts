@@ -1,7 +1,7 @@
 import {EmbedBuilder, GuildScheduledEvent, TextChannel, User} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'guildScheduledEventUserAdd',
   once: false,
   async execute(event: GuildScheduledEvent, user: User) {

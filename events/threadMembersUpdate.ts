@@ -1,7 +1,7 @@
 import {EmbedBuilder, GuildMember, TextChannel, ThreadChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'threadMembersUpdate',
   once: false,
   async execute(addedMembers: GuildMember[], removedMembers: GuildMember[], thread: ThreadChannel) {

@@ -1,7 +1,7 @@
 import {Client} from "discord.js";
-import {Commands} from "../Commands";
+import {Commands} from "../Commands.js";
 
-module.exports = {
+export default {
   name: 'ready',
   once: true,
   async execute(client: Client) {

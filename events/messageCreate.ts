@@ -2,7 +2,7 @@ import {Message, PermissionsBitField} from "discord.js";
 import {captureException} from "@sentry/node";
 import * as fs from "fs";
 
-module.exports = {
+export default {
   name: 'messageCreate',
   once: false,
   async execute(message: Message) {

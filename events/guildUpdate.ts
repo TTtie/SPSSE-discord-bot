@@ -1,7 +1,7 @@
 import {EmbedBuilder, Guild, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'guildUpdate',
   once: false,
   async execute(oldGuild: Guild, newGuild: Guild) {

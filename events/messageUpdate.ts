@@ -1,7 +1,7 @@
 import {EmbedBuilder, Message, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'messageUpdate',
   once: false,
   async execute(oldMessage: Message, newMessage: Message) {

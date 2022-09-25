@@ -1,7 +1,7 @@
 import {EmbedBuilder, GuildChannel, TextChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'channelDelete',
   once: false,
   async execute(channel: GuildChannel) {

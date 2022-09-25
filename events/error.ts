@@ -1,6 +1,6 @@
 import {captureException} from "@sentry/node";
 
-module.exports = {
+export default {
   name: 'error',
   once: false,
   execute(error: Error) {

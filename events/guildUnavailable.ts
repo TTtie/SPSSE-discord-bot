@@ -1,6 +1,6 @@
 import {Guild} from "discord.js";
 
-module.exports = {
+export default {
   name: 'guildUnavailable',
   once: false,
   async execute(guild: Guild) {

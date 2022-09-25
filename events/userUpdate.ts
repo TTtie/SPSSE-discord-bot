@@ -1,7 +1,7 @@
 import {EmbedBuilder, TextChannel, User} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'userUpdate',
   once: false,
   async execute(oldUser: User, newUser: User) {

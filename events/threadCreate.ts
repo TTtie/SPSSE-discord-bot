@@ -1,7 +1,7 @@
 import {EmbedBuilder, TextChannel, ThreadChannel} from "discord.js";
-import data = require('../config.json');
+import data from "../config.json" assert {type: "json"};
 
-module.exports = {
+export default {
   name: 'threadCreate',
   once: false,
   async execute(thread: ThreadChannel, newlyCreated: boolean) {
