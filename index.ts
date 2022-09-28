@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/node";
 import "@sentry/tracing"
 import * as path from "path";
 import * as fs from "fs";
-import { fileURLToPath } from "url";
+import {fileURLToPath} from "url";
 import "dotenv/config";
 
 // Setup for Sentry
@@ -28,19 +28,16 @@ for (const file of eventFiles) {
   import(filePath).then((event) => {
     event = event.default
     if (event.once) {
-      client.once(event.name, (...args) => event.execute(...args));
+      client.once(event.name, (...args) => event.execute(...args).catch((err: Error) => {Sentry.captureException(err);}));
     } else {
       client.on(event.name, (...args) => {
         const transaction = Sentry.startTransaction({
           op: "event",
           name: event.name,
         });
-        try {
-          event.execute(...args);
-        } catch (e) {
-          console.error(e);
-          Sentry.captureException(e);
-        }
+        event.execute(...args).catch((err: Error) => {
+          Sentry.captureException(err);
+        });
         transaction.finish();
       });
     }
