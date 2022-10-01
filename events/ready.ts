@@ -6,7 +6,7 @@ export default {
   once: true,
   async execute(client: Client) {
     if (!client.user || !client.application) return;
-    await client.application.commands.set(Commands).catch(console.error);
+    await client.application.commands.set(Commands).catch(err => console.error(err));
     console.log('Ready!');
   }
 }
