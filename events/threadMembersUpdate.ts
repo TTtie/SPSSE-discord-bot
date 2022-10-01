@@ -12,8 +12,8 @@ export default {
       .setTitle("Přidání/Odebrání uživatelé do vlákna")
       .setFields(
         { name: "Název", value: thread.name },
-        { name: "Přidaný", value: add ? add : "Žádní" },
-        { name: "Odstranění", value: rem ? rem : "Žádní" },
+        { name: "Přidaný", value: add ?? "Žádní" },
+        { name: "Odstranění", value: rem ?? "Žádní" },
       )
       .setFooter({ text: `ID: ${thread.id}` })
       .setTimestamp();

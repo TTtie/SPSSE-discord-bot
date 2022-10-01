@@ -10,9 +10,9 @@ export default {
       .setTitle("Upraven event")
       .setFields(
         { name: 'Jméno', value: newEvent.name },
-        { name: 'Popis', value: newEvent.description ? newEvent.description : "N/A" },
-        { name: 'Vytvořen na', value: newEvent.scheduledStartAt ? newEvent.scheduledStartAt.toLocaleString() : "N/A" },
-        { name: 'Vytvořil', value: newEvent.creator ? newEvent.creator.tag : "N/A" },
+        { name: 'Popis', value: newEvent.description ?? "N/A" },
+        { name: 'Vytvořen na', value: newEvent.scheduledStartAt?.toLocaleString() ?? "N/A" },
+        { name: 'Vytvořil', value: newEvent.creator?.tag ?? "N/A" },
       )
       .setImage(newEvent.image)
       .setFooter({ text: `ID: ${newEvent.id}` })

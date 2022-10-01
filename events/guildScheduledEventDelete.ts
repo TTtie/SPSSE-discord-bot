@@ -10,9 +10,9 @@ export default {
       .setTitle("Odstraněn event")
       .setFields(
         { name: 'Jméno', value: event.name },
-        { name: 'Popis', value: event.description ? event.description : "N/A" },
-        { name: 'Vytvořen na', value: event.scheduledStartAt ? event.scheduledStartAt.toLocaleString() : "N/A" },
-        { name: 'Vytvořil', value: event.creator ? event.creator.tag : "N/A" },
+        { name: 'Popis', value: event.description ?? "N/A" },
+        { name: 'Vytvořen na', value: event.scheduledStartAt?.toLocaleString() ?? "N/A" },
+        { name: 'Vytvořil', value: event.creator?.tag ?? "N/A" },
       )
       .setImage(event.image)
       .setFooter({ text: `ID: ${event.id}` })

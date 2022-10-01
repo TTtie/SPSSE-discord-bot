@@ -11,7 +11,7 @@ export default {
       .setFields(
         { name: 'Jméno', value: ban.user.tag },
         { name: 'ID', value: ban.user.id },
-        { name: 'Důvod', value: ban.reason ? ban.reason : 'N/A' },
+        { name: 'Důvod', value: ban.reason ?? 'N/A' },
       )
       .setImage(ban.user.avatarURL())
       .setFooter({ text: `ID: ${ban.user.id}` })

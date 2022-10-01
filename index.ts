@@ -1,4 +1,4 @@
-import {Client} from "discord.js";
+import {Client, GatewayIntentBits} from "discord.js";
 import * as Sentry from "@sentry/node";
 import "@sentry/tracing"
 import * as path from "path";
@@ -15,7 +15,17 @@ Sentry.init({
 });
 
 // Discord.js Client
-const client = new Client({ intents: 34511 });
+const client = new Client({
+  intents: GatewayIntentBits.Guilds |
+    GatewayIntentBits.GuildMembers |
+    GatewayIntentBits.GuildBans |
+    GatewayIntentBits.GuildEmojisAndStickers |
+    GatewayIntentBits.GuildInvites |
+    GatewayIntentBits.GuildVoiceStates |
+    GatewayIntentBits.GuildMessages |
+    GatewayIntentBits.GuildMessageReactions |
+    GatewayIntentBits.MessageContent
+});
 
 // Load all events
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
