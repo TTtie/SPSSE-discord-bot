@@ -27,6 +27,6 @@ export const CreateReactionRole: Command = {
     if (desc)
       embed.setDescription(desc);
     await interaction.channel?.send({embeds: [embed]});
-    await interaction.reply({content: "Created!", ephemeral: true})
+    await interaction.reply({content: "Zpráva byla úspěšně vytvořena!", ephemeral: true})
   }
 }

@@ -35,7 +35,7 @@ export const AddRole: Command = {
       || await interaction.channel?.messages.fetch(messageId);
     if (message) {
       if (message.author.id !== client.user?.id) {
-        await interaction.reply({ content: "Tato zprava neni moje", ephemeral: true });
+        await interaction.reply({ content: "Tato zpráva není moje.", ephemeral: true });
         return;
       }
 
@@ -48,7 +48,7 @@ export const AddRole: Command = {
           .map(x => x.toJSON()) as APIButtonComponent[];
 
         if (components.find(x => (x as APIButtonComponentWithCustomId).custom_id === `role_${role.id}`)) {
-          await interaction.reply({ content: "Tato role jiz je v seznamu", ephemeral: true });
+          await interaction.reply({ content: "Tato role již je v seznamu.", ephemeral: true });
           return;
         }
 
@@ -64,7 +64,7 @@ export const AddRole: Command = {
         components.push(bb.toJSON());
 
         if (components.length > 25) {
-          await interaction.reply({ content: "Too many buttons", ephemeral: true });
+          await interaction.reply({ content: "Byl překročen maximální počet tlačítek ve zprávě", ephemeral: true });
           return;
         }
 
@@ -81,7 +81,7 @@ export const AddRole: Command = {
         await message.edit({
           components: outComponents
         });
-        await interaction.reply({content: "Role added!", ephemeral: true});
+        await interaction.reply({content: "Role byla přidána na seznam!", ephemeral: true});
       } else await interaction.reply({content: "Role nenalezena", ephemeral: true});
     } else await interaction.reply({content: "Zpráva nenalezena", ephemeral: true});
   }
