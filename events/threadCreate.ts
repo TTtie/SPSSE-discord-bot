@@ -10,7 +10,7 @@ export default {
       .setTitle("Vytvořeno vlákno")
       .setFields(
         { name: "Název", value: thread.name },
-        { name: "Kanál", value: thread.parent ? thread.parent.name : "Žádná" },
+        { name: "Kanál", value: thread.parent?.name ?? "Žádná" },
       )
       .setFooter({ text: `ID: ${thread.id}` })
       .setTimestamp();

@@ -10,9 +10,9 @@ export default {
       .setTitle("Přidán nový invite")
       .setFields(
         { name: 'Kod', value: invite.code },
-        { name: 'Vytvořil', value: invite.inviter ? invite.inviter.tag : 'N/A' },
-        { name: 'Maximální počet použití', value: invite.maxUses ? invite.maxUses.toString() : 'N/A' },
-        { name: 'Vyprší', value: invite.expiresAt ? invite.expiresAt.toString() : 'N/A' },
+        { name: 'Vytvořil', value: invite.inviter?.tag ?? 'N/A' },
+        { name: 'Maximální počet použití', value: invite.maxUses?.toString() ?? 'N/A' },
+        { name: 'Vyprší', value: invite.expiresAt?.toString() ?? 'N/A' },
       )
       .setFooter({ text: `ID: ${invite.inviterId}` })
       .setTimestamp();

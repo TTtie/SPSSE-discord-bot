@@ -9,9 +9,9 @@ export default {
       .setColor(0xffff00)
       .setTitle("Upraveno emoji")
       .addFields(
-        { name: 'Název', value: newEmoji.name ? newEmoji.name : "N/A" },
-        { name: 'Autor', value: newEmoji.author ? newEmoji.author.username : "N/A", inline: true },
-        { name: 'Animovaný', value: newEmoji.animated ? newEmoji.animated ? "Ano" : "Ne" : "N/A", inline: true },
+        { name: 'Název', value: newEmoji.name ?? "N/A" },
+        { name: 'Autor', value: newEmoji.author?.username ?? "N/A", inline: true },
+        { name: 'Animovaný', value: newEmoji.animated ? "Ano" : "Ne", inline: true },
       )
       .setImage(newEmoji.url)
       .setFooter({ text: `ID: ${newEmoji.id}` })
